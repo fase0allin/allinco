@@ -9,16 +9,18 @@
     <body>
         <div class="header">
             <h2>ALL-IN.co</h2>
-            <button type="submit">
+            <button id="clickCart" type="submit" onclick="toggleCart();">
                 <img src="./assets/cart.png" />
             </button>
             <h3>Tukar Points</h3>
         </div>
         <div id="container">
+            <!-- ! codingan template -->
             <!-- <div class="test">
                 <img
-                src="https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg"
-                 class="img">
+                    src="https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg"
+                    class="img"
+                />
                 <div class="name">
                     <p>Barang 1 |</p>
                     <img src="./assets/stars.png" />
@@ -43,7 +45,15 @@
                     <p>Add to Cart</p>
                 </div>
             </div> -->
-
+        </div>
+        <div id="cartdiv">
+            <div class="box">
+                <h1>Cart</h1>
+                <button id="clickClose" type="submit" onclick="clickClose();">
+                    <img src="./assets/close.png" />
+                </button>
+                <div id="cartList"><div class="cartItem"></div></div>
+            </div>
         </div>
     </body>
     <script src="index.js"></script>
