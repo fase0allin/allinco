@@ -65,6 +65,43 @@ let catalog = [
 ];
 
 const parentElement = document.getElementById("container");
+let cart = [
+    {
+        name: "baju5",
+        price: 45000,
+        image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
+        hover: "",
+        quantity: 0,
+    },
+    {
+        name: "baju5",
+        price: 45000,
+        image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
+        hover: "",
+        quantity: 0,
+    },
+    {
+        name: "baju5",
+        price: 45000,
+        image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
+        hover: "",
+        quantity: 0,
+    },
+    {
+        name: "baju5",
+        price: 45000,
+        image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
+        hover: "",
+        quantity: 0,
+    },
+    {
+        name: "baju5",
+        price: 45000,
+        image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
+        hover: "",
+        quantity: 0,
+    },
+];
 
 for (let i = 0; i < catalog.length; i++) {
     const card = document.createElement("div");

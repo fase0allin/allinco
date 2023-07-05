@@ -156,7 +156,33 @@ body {
 
 .header h2 {
     color: rgb(0, 0, 165);
+    font-size: 32px;
+}
+
+.header h3 {
+    color: rgb(0, 0, 165);
     font-size: 24px;
+}
+
+.header button {
+    position: absolute;
+    background-color: transparent;
+    top: 28px;
+    right: 200px;
+    cursor: pointer;
+    border: 0px;
+}
+
+.header h3 {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.header img {
+    width: 24px;
+    height: 24px;
 }
 
 #container {
@@ -222,9 +248,27 @@ body {
     color: white;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
     #container {
         width: 100%;
-        background-color: white;
+        /* background-color: blue; */
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header button {
+        position: static;
+        background-color: transparent;
+        cursor: pointer;
+        order: 100;
+    }
+
+    .header h3 {
+        position: static;
+        cursor: pointer;
     }
 }
