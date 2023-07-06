@@ -81,14 +81,14 @@ header {
     background-color: #555;
 }
 
-/* About Section Styles */
-section#about {
+/* prize Section Styles */
+section#prize {
     background-color: #f4f4f4;
     padding: 100px 0;
     text-align: center;
 }
 
-section#about h2 {
+section#prize h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -108,7 +108,8 @@ section#products h2 {
     display: inline-block;
     vertical-align: top;
     width: 30%;
-    margin: 0 2%;
+    margin: 0 1%;
+    margin-bottom: 30px;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
@@ -130,25 +131,26 @@ section#products h2 {
     margin-bottom: 20px;
 }
 
-/* Contact Section Styles */
-section#contact {
+
+/* create Section Styles */
+section#create {
     background-color: #f4f4f4;
     padding: 100px 0;
     text-align: center;
 }
 
-section#contact h2 {
+section#create h2 {
     font-size: 36px;
     margin-bottom: 20px;
 }
 
-section#contact form {
+section#create form {
     max-width: 500px;
     margin: 0 auto;
 }
 
-section#contact input,
-section#contact textarea {
+section#create input,
+section#create textarea {
     display: block;
     width: 100%;
     margin-bottom: 20px;
@@ -156,11 +158,30 @@ section#contact textarea {
     font-size: 16px;
 }
 
-section#contact button {
+section#create button {
     display: block;
     width: 100%;
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
     font-size: 16px;
-    border:
+    border:1px solid #333;
+    transition: background-color 0.3s ease;
+}
+
+section#create button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
