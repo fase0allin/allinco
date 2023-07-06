@@ -82,91 +82,95 @@ let catalog = [
     },
 ];
 
-const parentElement = document.getElementById("container");
 let cart = [
     {
         name: "baju5",
-        price: 45000,
+        price: 49000,
         image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
         hover: "",
-        quantity: 0,
+        quantity: 1,
     },
     {
         name: "baju5",
         price: 45000,
         image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
         hover: "",
-        quantity: 0,
+        quantity: 1,
     },
     {
         name: "baju5",
         price: 45000,
         image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
         hover: "",
-        quantity: 0,
+        quantity: 1,
     },
     {
         name: "baju5",
         price: 45000,
         image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
         hover: "",
-        quantity: 0,
+        quantity: 1,
     },
     {
         name: "baju5",
         price: 45000,
         image: "https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg",
         hover: "",
-        quantity: 0,
+        quantity: 1,
     },
 ];
 
-for (let i = 0; i < catalog.length; i++) {
-    const card = document.createElement("div");
-    card.classList.add("test");
+function renderCatalog() {
+    const parentElement = document.getElementById("container");
+    for (let i = 0; i < catalog.length; i++) {
+        const card = document.createElement("div");
+        card.classList.add("test");
 
-    const image = document.createElement("img");
-    image.src = catalog[i].image;
-    image.alt = catalog[i].name;
-    card.appendChild(image);
+        const image = document.createElement("img");
+        image.src = catalog[i].image;
+        image.alt = catalog[i].name;
+        card.appendChild(image);
 
-    // name section
-    const nameSection = document.createElement("div");
-    nameSection.classList.add("name");
+        // name section
+        const nameSection = document.createElement("div");
+        nameSection.classList.add("name");
 
-    const itemName = document.createElement("p");
-    itemName.textContent = `${catalog[i].name} |`;
+        const itemName = document.createElement("p");
+        itemName.textContent = `${catalog[i].name} |`;
 
-    const ratingImage = document.createElement("img");
-    ratingImage.src = "./assets/stars.png";
+        const ratingImage = document.createElement("img");
+        ratingImage.src = "./assets/stars.png";
 
-    const rating = document.createElement("p");
-    rating.textContent = catalog[i].rating;
+        const rating = document.createElement("p");
+        rating.textContent = catalog[i].rating;
 
-    nameSection.appendChild(itemName);
-    nameSection.appendChild(ratingImage);
-    nameSection.appendChild(rating);
+        nameSection.appendChild(itemName);
+        nameSection.appendChild(ratingImage);
+        nameSection.appendChild(rating);
 
-    card.appendChild(nameSection);
+        card.appendChild(nameSection);
 
-    const price = document.createElement("p");
-    price.textContent = `Harga : Rp. ${catalog[i].price},00`;
+        const price = document.createElement("p");
+        price.textContent = `Harga : Rp. ${catalog[i].price},00`;
 
-    card.appendChild(price);
+        card.appendChild(price);
 
-    // cart section
-    const cartSection = document.createElement("div");
-    cartSection.classList.add("cart");
+        // cart section
+        const cartSection = document.createElement("div");
+        cartSection.classList.add("cart");
 
-    const addToCart = document.createElement("button");
-    addToCart.textContent = "Add to Cart";
+        const addToCart = document.createElement("button");
+        addToCart.textContent = "Add to Cart";
 
-    cartSection.appendChild(addToCart);
+        cartSection.appendChild(addToCart);
 
-    card.appendChild(cartSection);
+        card.appendChild(cartSection);
 
-    parentElement.appendChild(card);
+        parentElement.appendChild(card);
+    }
 }
+
+renderCatalog();
 
 // const parentElement = document.getElementById("container");
 
@@ -191,8 +195,42 @@ windowPop.style.display = "none";
 
 function toggleCart() {
     windowPop.style.display = "";
+    renderCart();
 }
 
 function clickClose() {
     windowPop.style.display = "none";
+}
+
+function renderCart() {
+    const parentElement = document.getElementById("cartList");
+    for (let i = 0; i < cart.length; i++) {
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cartItem");
+
+        const image = document.createElement("img");
+        image.src = catalog[i].image;
+        image.alt = catalog[i].name;
+        cartItem.appendChild(image);
+
+        const itemLabel = document.createElement("div");
+        const itemName = document.createElement("p");
+        itemName.style.marginTop = "8px";
+        itemName.textContent = `${cart[i].name}`;
+        itemLabel.appendChild(itemName);
+
+        const itemPrice = document.createElement("p");
+        itemPrice.style.marginTop = "4px";
+        itemPrice.textContent = `Harga : Rp. ${cart[i].price},00`;
+        itemLabel.appendChild(itemPrice);
+
+        const quantity = document.createElement("div");
+        const quantityLabel = document.createElement("p");
+        const quantityAmount = document.createElement("p");
+        const buttonMinus = document.createElement("button");
+        const buttonPlus = document.createElement("button");
+
+        cartItem.appendChild(itemLabel);
+        parentElement.appendChild(cartItem);
+    }
 }
