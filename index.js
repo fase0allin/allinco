@@ -196,3 +196,81 @@ function toggleCart() {
 function clickClose() {
     windowPop.style.display = "none";
 }
+
+//----------function form----------
+
+function handleSubmit(event) {
+    event.preventDefault(); // Prevent the form from submitting and refreshing the page
+
+    // Retrieve form input values
+    const nameInput = document.getElementById('name');
+    const priceInput = document.getElementById('price');
+    const linkInput = document.getElementById('link');
+
+    // Create a new object and assign input values to properties
+
+    const newObj = {
+        id: catalog.length-1,
+        name: nameInput.value,
+        price: parseInt(priceInput.value),
+        image: linkInput.value,
+        hover: linkInput.value,
+        quantity: 0,
+        rating: 0
+    }
+
+    // Push the object to the array
+    catalog.unshift(newObj);
+
+    // Reset the form
+    document.getElementById('myForm').reset();
+
+    // Perform any additional operations with the array of objects
+    console.log(catalog);
+    
+        const card = document.createElement("div");
+        card.classList.add("test");
+    
+        const image = document.createElement("img");
+        image.src = catalog[0].image;
+        image.alt = catalog[0].name;
+        card.appendChild(image);
+    
+        // name section
+        const nameSection = document.createElement("div");
+        nameSection.classList.add("name");
+    
+        const itemName = document.createElement("p");
+        itemName.textContent = `${catalog[0].name} |`;
+    
+        const ratingImage = document.createElement("img");
+        ratingImage.src = "./assets/stars.png";
+    
+        const rating = document.createElement("p");
+        rating.textContent = catalog[0].rating;
+    
+        nameSection.appendChild(itemName);
+        nameSection.appendChild(ratingImage);
+        nameSection.appendChild(rating);
+    
+        card.appendChild(nameSection);
+    
+        const price = document.createElement("p");
+        price.textContent = `Harga : Rp. ${catalog[0].price},00`;
+    
+        card.appendChild(price);
+    
+        // cart section
+        const cartSection = document.createElement("div");
+        cartSection.classList.add("cart");
+    
+        const addToCart = document.createElement("button");
+        addToCart.textContent = "Add to Cart";
+    
+        cartSection.appendChild(addToCart);
+    
+        card.appendChild(cartSection);
+    
+        parentElement.appendChild(card);
+    
+  }

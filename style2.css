@@ -1,0 +1,166 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #aaa;
+}
+
+/* Hero Styles */
+.hero {
+    background-image: url("hero.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* About Section Styles */
+section#about {
+    background-color: #f4f4f4;
+    padding: 100px 0;
+    text-align: center;
+}
+
+section#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Products Section Styles */
+section#products {
+    padding: 100px 0;
+    text-align: center;
+}
+
+section#products h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.product {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 0 2%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section Styles */
+section#contact {
+    background-color: #f4f4f4;
+    padding: 100px 0;
+    text-align: center;
+}
+
+section#contact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+section#contact input,
+section#contact textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+section#contact button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border:

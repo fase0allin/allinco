@@ -55,6 +55,30 @@
                 <div id="cartList"><div class="cartItem"></div></div>
             </div>
         </div>
+        <div class="form-container" >
+            <div class="title">Product Form</div>
+            <div class="content">
+                <form id="myForm" onsubmit="handleSubmit(event)">
+                    <div class="product-details">
+                        <div class="input-box">
+                            <span class="details">Product Name</span>
+                            <input id="name" type="text" placeholder="Input Product Name" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Product Price</span>
+                            <input id="price" type="number" placeholder="Input Product Price" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Product Image</span>
+                            <input id="link" type="text" placeholder="Input Image Link" required>
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Upload">
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
     <script src="index.js"></script>
 </html>
