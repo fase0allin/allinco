@@ -3,20 +3,130 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ALL-IN.co</title>
+        <title>KoleksiKu</title>
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <div class="header">
-            <h2>ALL-IN.co</h2>
+            <h2>KoleksiKu</h2>
             <button id="clickCart" type="submit" onclick="toggleCart();">
                 <img src="./assets/cart.png" />
             </button>
             <h3>Tukar Points</h3>
         </div>
-        <div id="container">
-            <!-- ! codingan template -->
-            <!-- <div class="test">
+        <div id="containerDOM"></div>
+        <div id="cartdiv">
+            <div class="box">
+                <h1>Cart</h1>
+                <button id="clickClose" type="submit" onclick="clickClose();">
+                    <img src="./assets/close.png" />
+                </button>
+                <div id="cartListDOM">
+                    <div class="cartItem">
+                        <img
+                            src="https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg"
+                            class="imgCart"
+                        />
+                        <div class="cartInfo">
+                            <h4>Nama</h4>
+                            <p>price : 10000,00</p>
+                            <div class="quantity">
+                                <p>quantity</p>
+                                <button>-</button>
+                                <p>1</p>
+                                <button>+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pembayaran">
+                    <p>Total Harga : 0</p>
+                    <button onclick="openReview()">Checkout</button>
+                </div>
+            </div>
+        </div>
+        <div id="reviewdiv">
+            <div class="box">
+                <h1>Pembayaran <br />telah berhasil!</h1>
+                <p style="text-align: center" id="points">
+                    Kamu mendapatkan 0 points
+                </p>
+                <h1>Review barang</h1>
+                <form id="reviewForm" onsubmit="closeReview(event)">
+                    <div id="reviewDOM">
+                        <div class="cartItem">
+                            <img
+                                src="https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg"
+                                class="imgCart"
+                            />
+                            <div class="cartInfo">
+                                <h4>Nama</h4>
+                                <p>price : 10000,00</p>
+                                <div class="quantity">
+                                    <input
+                                        id="rating"
+                                        type="number"
+                                        placeholder="Input Rating 1-5"
+                                        style="width: 120px"
+                                        min="1"
+                                        max="5"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pembayaran">
+                        <button type="submit">Selesai</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="title">Product Form</div>
+            <div class="content">
+                <form id="myForm" onsubmit="handleSubmit(event)">
+                    <div class="product-details">
+                        <div class="input-box">
+                            <span class="details">Product Name</span>
+                            <input
+                                id="name"
+                                type="text"
+                                placeholder="Input Product Name"
+                                required
+                            />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Product Price</span>
+                            <input
+                                id="price"
+                                type="number"
+                                placeholder="Input Product Price"
+                                required
+                            />
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Product Image</span>
+                            <input
+                                id="link"
+                                type="text"
+                                placeholder="Input Image Link"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Upload" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer id="footer"></footer>
+    </body>
+    <script src="index.js"></script>
+</html>
+
+<!-- ! codingan template -->
+<!-- <div class="test">
                 <img
                     src="https://oxfoord.id/wp-content/uploads/2022/10/SHIRT-13A-NEW-247x296.jpg"
                     class="img"
@@ -31,54 +141,3 @@
                     <p>Add to Cart</p>
                 </div>
             </div> -->
-            <!-- <div class="test">
-                <img
-                src="https://oxfoord.id/wp-content/uploads/2023/04/Shirt-lapalmas-247x296.jpg"
-                 class="img">
-                <div class="name">
-                    <p>Barang 1 |</p>
-                    <img src="./assets/stars.png" />
-                    <p>4</p>
-                </div>
-                <p>Harga : Rp. 30000,00</p>
-                <div class="cart">
-                    <p>Add to Cart</p>
-                </div>
-            </div> -->
-        </div>
-        <div id="cartdiv">
-            <div class="box">
-                <h1>Cart</h1>
-                <button id="clickClose" type="submit" onclick="clickClose();">
-                    <img src="./assets/close.png" />
-                </button>
-                <div id="cartList"><div class="cartItem"></div></div>
-            </div>
-        </div>
-        <div class="form-container" >
-            <div class="title">Product Form</div>
-            <div class="content">
-                <form id="myForm" onsubmit="handleSubmit(event)">
-                    <div class="product-details">
-                        <div class="input-box">
-                            <span class="details">Product Name</span>
-                            <input id="name" type="text" placeholder="Input Product Name" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Product Price</span>
-                            <input id="price" type="number" placeholder="Input Product Price" required>
-                        </div>
-                        <div class="input-box">
-                            <span class="details">Product Image</span>
-                            <input id="link" type="text" placeholder="Input Image Link" required>
-                        </div>
-                    </div>
-                    <div class="button">
-                        <input type="submit" value="Upload">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </body>
-    <script src="index.js"></script>
-</html>
