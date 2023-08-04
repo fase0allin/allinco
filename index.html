@@ -9,10 +9,10 @@
     <body>
         <div class="header">
             <h2>KoleksiKu</h2>
-            <button id="clickCart" type="submit" onclick="toggleCart();">
+            <button id="clickCart" onclick="toggleCart();">
                 <img src="./assets/cart.png" />
             </button>
-            <h3>Tukar Points</h3>
+            <h3 onclick="openGacha()">Tukar Points</h3>
         </div>
         <div id="containerDOM"></div>
         <div id="cartdiv">
@@ -79,6 +79,33 @@
                         <button type="submit">Selesai</button>
                     </div>
                 </form>
+            </div>
+        </div>
+        <div id="gachadiv">
+            <div class="box">
+                <h1>Tukarkan point mu</h1>
+                <button id="clickClose" type="submit" onclick="closeGacha();">
+                    <img src="./assets/close.png" />
+                </button>
+                <div>
+                    <h1 style="margin-top: 200px;">Mobil / Motor / Rumah</h1>
+                    <div class="slider">
+                        <p>0</p>
+                        <input
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="50"
+                            step="5"
+                            onchange="logSliderValue(this.value)"
+                        />
+                        <p>100</p>
+                    </div>
+                    <p style="text-align: center">50</p>
+                    <div class="pembayaran" style="margin-top: 80px;">
+                        <button style="">Spin</button>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="form-container">

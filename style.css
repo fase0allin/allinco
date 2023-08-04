@@ -280,6 +280,16 @@ body {
     height: 100%;
 }
 
+#gachadiv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    height: 100%;
+}
+
 #cartdiv .box {
     position: fixed;
     top: 50%;
@@ -302,6 +312,25 @@ body {
     min-width: 424px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     height: 90vh;
+}
+
+#gachadiv .box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: white;
+    min-width: 424px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 90vh;
+}
+
+#gachadiv .slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
 }
 
 #clickClose {

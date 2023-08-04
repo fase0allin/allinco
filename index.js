@@ -157,7 +157,7 @@ function createItem(item) {
         temp = 0;
     } else {
         ratingItem = ratingItem.filter((a) => a.id === item.id);
-        console.log(ratingItem[0].rating);
+        // console.log(ratingItem[0].rating);
         temp = calculateRating(ratingItem[0].rating);
     }
     // console.log(temp);
@@ -225,8 +225,10 @@ function createItemReview(item, index) {
 
 const windowCart = document.getElementById("cartdiv");
 const windowReview = document.getElementById("reviewdiv");
+const windowGacha = document.getElementById("gachadiv");
 windowCart.classList.add("displayNone");
 windowReview.classList.add("displayNone");
+windowGacha.classList.add("displayNone");
 
 function addQuantity(id) {
     let quantityId = document.getElementById(`quantity${id}`);
@@ -355,4 +357,38 @@ function openReview() {
     renderBayar();
     renderReview();
 }
+
+function openGacha() {
+    windowGacha.classList.remove("displayNone");
+}
+
+function closeGacha() {
+    windowGacha.classList.add("displayNone");
+}
+
+function logSliderValue(value) {
+    console.log("Slider value: " + value);
+}
+
+let slider = document.querySelector(".slider");
+
+function createSlider () {
+    let points = +localStorage.points;
+    console.log(points);
+    slider.innerHTML = `
+        <p>0</p>
+            <input
+                type="range"
+                min="0"
+                max="${points}"
+                value="${points/2}"
+                step="5"
+                onchange="logSliderValue(this.value)"
+            />
+        <p>100</p>
+    `
+}
+
+createSlider();
+
 render();
